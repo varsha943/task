@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Hospital Online Appointment</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f6fb;
+margin:0;
+}
+
+header{
+background:#0a4b78;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+.container{
+width:450px;
+margin:40px auto;
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input,select{
+width:100%;
+padding:8px;
+margin:8px 0;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#1976d2;
+color:white;
+border:none;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0d5db3;
+}
+
+.success{
+color:green;
+font-weight:bold;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>Hospital Online Appointment</h2>
+</header>
+
+<div class="container">
+
+<h3>Book Appointment</h3>
+
+<form onsubmit="return bookAppointment()">
+
+<label>Patient Name</label>
+<input type="text" id="name" required>
+
+<label>Age</label>
+<input type="number" id="age" required>
+
+<label>Date</label>
+<input type="date" id="date" required>
+
+<label>Time</label>
+<input type="time" id="time" required>
+
+<label>Department</label>
+<select id="department" required>
+
+<option value="">Select Department</option>
+<option>General Medicine</option>
+<option>Cardiology</option>
+<option>Neurology</option>
+<option>Dermatology</option>
+<option>Diabetes Department</option>
+
+</select>
+
+<label>Doctor</label>
+<select id="doctor" required>
+
+<option value="">Select Doctor</option>
+<option>Dr. Anil</option>
+<option>Dr. Suma</option>
+<option>Dr. Joseph</option>
+<option>Dr. Priya</option>
+<option>Dr. Thomas</option>
+
+</select>
+
+<label>Consultation Fees (₹)</label>
+<input type="number" id="fees" value="500">
+
+<label>Payment Method</label>
+
+<select id="payment">
+
+<option>Cash</option>
+<option>Credit Card</option>
+<option>Debit Card</option>
+<option>UPI</option>
+<option>Net Banking</option>
+
+</select>
+
+<button type="submit">Book Appointment</button>
+
+</form>
+
+<p id="msg" class="success"></p>
+
+</div>
+
+<script>
+
+function bookAppointment(){
+
+let name=document.getElementById("name").value;
+
+document.getElementById("msg").innerHTML=
+"Appointment booked successfully for "+name+".";
+
+return false;
+
+}
+
+</script>
+
+</body>
+</html>

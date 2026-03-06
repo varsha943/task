@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hospital Manager Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f2f5f9;
+}
+
+header{
+background:#0a4b78;
+color:white;
+padding:15px;
+text-align:center;
+}
+
+nav{
+background:#1976d2;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.container{
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:20px 0;
+border-radius:8px;
+box-shadow:0 0 8px rgba(0,0,0,0.15);
+}
+
+table{
+border-collapse:collapse;
+width:100%;
+}
+
+table,th,td{
+border:1px solid #ccc;
+}
+
+th{
+background:#e3ecf7;
+}
+
+th,td{
+padding:10px;
+text-align:left;
+}
+
+button{
+padding:8px 12px;
+background:#1976d2;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+#dashboard{
+display:none;
+}
+
+input{
+padding:8px;
+margin:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>Hospital Administration System</h2>
+<p>Manager Control Panel</p>
+</header>
+
+<!-- LOGIN PAGE -->
+
+<div class="container" id="loginPage">
+
+<div class="card">
+
+<h3>Manager Login</h3>
+
+<input type="text" id="username" placeholder="Username"><br>
+<input type="password" id="password" placeholder="Password"><br>
+
+<button onclick="login()">Login</button>
+
+<p id="msg"></p>
+
+</div>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div id="dashboard">
+
+<nav>
+<a href="#patients">Patients</a>
+<a href="#consult">Consultation</a>
+<a href="#doctors">Doctors</a>
+<a href="#staff">Staff</a>
+</nav>
+
+<div class="container">
+
+<!-- PATIENT LIST -->
+
+<div class="card" id="patients">
+
+<h3>Patient Details</h3>
+
+<table>
+
+<tr>
+<th>Patient ID</th>
+<th>Name</th>
+<th>Age</th>
+<th>Gender</th>
+</tr>
+
+<tr>
+<td>P101</td>
+<td>Rahul Kumar</td>
+<td>30</td>
+<td>Male</td>
+</tr>
+
+<tr>
+<td>P102</td>
+<td>Meera Nair</td>
+<td>25</td>
+<td>Female</td>
+</tr>
+
+<tr>
+<td>P103</td>
+<td>Ajay Das</td>
+<td>40</td>
+<td>Male</td>
+</tr>
+
+<tr>
+<td>P104</td>
+<td>Anjali Menon</td>
+<td>35</td>
+<td>Female</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- CONSULTATION DETAILS -->
+
+<div class="card" id="consult">
+
+<h3>Consultation Details</h3>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Disease</th>
+<th>Medicines</th>
+</tr>
+
+<tr>
+<td>10-03-2026</td>
+<td>Rahul Kumar</td>
+<td>Dr. Anil</td>
+<td>Fever</td>
+<td>Paracetamol, Vitamin C</td>
+</tr>
+
+<tr>
+<td>11-03-2026</td>
+<td>Meera Nair</td>
+<td>Dr. Suma</td>
+<td>Migraine</td>
+<td>Sumatriptan</td>
+</tr>
+
+<tr>
+<td>12-03-2026</td>
+<td>Ajay Das</td>
+<td>Dr. Joseph</td>
+<td>Diabetes</td>
+<td>Metformin</td>
+</tr>
+
+<tr>
+<td>12-03-2026</td>
+<td>Anjali Menon</td>
+<td>Dr. Priya</td>
+<td>Skin Allergy</td>
+<td>Antihistamine</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- DOCTOR DETAILS -->
+
+<div class="card" id="doctors">
+
+<h3>Doctors List</h3>
+
+<table>
+
+<tr>
+<th>Doctor Name</th>
+<th>Specialisation</th>
+<th>Department</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Dr. Anil</td>
+<td>General Physician</td>
+<td>General Medicine</td>
+<td>Available</td>
+</tr>
+
+<tr>
+<td>Dr. Suma</td>
+<td>Neurologist</td>
+<td>Neurology</td>
+<td>Available</td>
+</tr>
+
+<tr>
+<td>Dr. Joseph</td>
+<td>Endocrinologist</td>
+<td>Diabetes Department</td>
+<td>Available</td>
+</tr>
+
+<tr>
+<td>Dr. Priya</td>
+<td>Dermatologist</td>
+<td>Skin Department</td>
+<td>On Leave</td>
+</tr>
+
+<tr>
+<td>Dr. Thomas</td>
+<td>Cardiologist</td>
+<td>Cardiology</td>
+<td>On Leave</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- STAFF DETAILS -->
+
+<div class="card" id="staff">
+
+<h3>Hospital Staff Details</h3>
+
+<table>
+
+<tr>
+<th>Staff ID</th>
+<th>Name</th>
+<th>Position</th>
+</tr>
+
+<tr>
+<td>S201</td>
+<td>Anita</td>
+<td>Nurse</td>
+</tr>
+
+<tr>
+<td>S202</td>
+<td>Ramesh</td>
+<td>Lab Technician</td>
+</tr>
+
+<tr>
+<td>S203</td>
+<td>Sneha</td>
+<td>Receptionist</td>
+</tr>
+
+<tr>
+<td>S204</td>
+<td>Arjun</td>
+<td>Pharmacist</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(user==="manager" && pass==="admin123"){
+
+document.getElementById("loginPage").style.display="none";
+document.getElementById("dashboard").style.display="block";
+
+}else{
+
+document.getElementById("msg").innerHTML="Invalid Login";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
